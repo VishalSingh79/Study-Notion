@@ -1,14 +1,22 @@
 #root {
-  width:1284px;
-  height: 100%;
-  margin: 0.5rem auto;
-  padding: 0rem;
+  width:100vw;
+  height: 100vh;
+  margin: 0rem auto;
+  box-sizing: border-box;
   overflow: hidden;
 }
 .container{
-  width:1024px;
+  width:80%;
+  height: 100%;
   margin: 0 auto;
-  height: max-content;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.hamburger-menu{
+  display: none;
 }
 .navbar{
   width:100%;
@@ -19,7 +27,8 @@
 }
 .links{
   display: flex;
-  gap:2rem;
+  width: max-content;
+  column-gap:2rem;
 }
 .btns{
   display: flex;
@@ -31,11 +40,21 @@
   justify-content: center;
   align-items: center;
   height: 650px;
+  
 }
 .part2{
   position: relative;
   width: 45%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.part2-img{
+  width:350px;
+  height: 350px;
+  position: relative;
 }
 .part1{
   position: relative;
@@ -44,16 +63,16 @@
   width: 55%;
   height: 100%;
 }
+
 .img1{
   position: absolute;
-  top:5rem;
-  left:4rem;
+ 
   z-index: 2;
 }
 .img2{
   position: absolute;
-  top:5.5rem;
-  left:4.5rem;
+  top:0.5rem;
+  left: 0.5rem;
   z-index: 1;
 }
 .title{
@@ -174,4 +193,61 @@
   cursor:pointer;
   color:red;
   transition: 400ms;
+}
+@media (max-width: 768px){
+  .pages{
+    flex-direction:column-reverse;
+    height: max-content;
+    overflow-y: scroll;
+    z-index: 1;
+  }
+  .part2{
+    width:100%;
+    height:350px;
+    box-sizing: border-box;
+    padding-top: 0.8rem;
+  }
+  .part1{
+    width: 100%;
+  }
+  .links{
+      display: none;
+  }
+  .btns{
+    display: none;
+  }
+  .hamburger-menu{
+    display: block;
+    font-size: 2.6rem;
+    z-index: 3;
+  }
+  .mobile-menu{
+    position: relative;
+    top: 5.9rem;
+    left:4rem;
+    width:15rem;
+    border-radius: 8px;
+    height: 15rem;
+    background-color: rgba(60, 58, 58, 0.845);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+  }
+  .links1{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  .btns1{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  .btns, p{
+    margin: 0.1rem;
+  }
 }

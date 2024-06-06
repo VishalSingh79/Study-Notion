@@ -1,11 +1,15 @@
 import React from 'react'
 import logo from '../assets/Logo.svg'
-import {Link ,useNavigate} from 'react-router-dom'
+import {Link ,Navigate,useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
-
+import { IoReorderThree } from "react-icons/io5";
+import { useState } from 'react';
+import { GiSplitCross } from "react-icons/gi";
 function Navbar(props) {
   let isLoggedIn=props.isLoggedIn;
   let setIsLoggedIn=props.setIsLoggedIn;
+ 
+  const [menuBar,setMenuBar]=useState(false);
   let navigate=useNavigate();
   function navigationHandler(){
 
@@ -15,6 +19,12 @@ function Navbar(props) {
       autoClose:800
      })
   }
+ function hamburgerHandler(){
+  setMenuBar(!menuBar);
+  
+ }
+
+
   
   return (
     <div className='navbar'>  
@@ -46,11 +56,52 @@ function Navbar(props) {
             isLoggedIn&&
             <button onClick={navigationHandler}>Log out</button>
           }
+           
+        </div>
         
-      
+        <div className={menuBar?"mobile-menu":"close-menu"}>
+        { menuBar?
+              <div className='links1'>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+               <Link to="/contact">Contact</Link>
+              </div>:
+              <div></div>
+        }    
+        {menuBar?
+              <div className="btns1">
+          {
+            !isLoggedIn&&
+            <Link to="/login"><p>Log in</p></Link>
+          }
+          {
+            !isLoggedIn&&
+            <Link to="/signup"><p>Sign up</p></Link>
+          }
+          {
+            isLoggedIn&&
+            <Link to="/dashboard"><p>Dashboard</p></Link>
+          }
+          {
+            isLoggedIn&&
+            <p onClick={navigationHandler}>Log out</p>
+          }
+           
+              </div>:
+              <div></div>
+        }
+        </div>
+
+        <div className='hamburger-menu'  onClick={hamburgerHandler}>
+        { menuBar? 
+          <GiSplitCross />
+        :
+          <IoReorderThree />
+        }
         </div>
     </div>
   )
 }
+
 
 export default Navbar

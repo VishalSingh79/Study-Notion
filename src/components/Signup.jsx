@@ -157,8 +157,10 @@ function Signup(props) {
       <button className='btn-google'>Sign up with Google</button>
     </div>
     <div className='part2'>
-      <img src={signup}  width={320} height={300} className='img1'/>
-      <img src={frame}  width={320} height={300} className='img2'/>
+        <div className='part2-img'>
+          <img src={signup}  width={320} height={300} className='img1'/>
+          <img src={frame}  width={320} height={300} className='img2'/>
+       </div>
     </div>
  </div>
   )

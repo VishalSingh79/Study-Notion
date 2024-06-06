@@ -20,17 +20,18 @@ function App() {
 
         <Routes>
           
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/login" element={<Login isLoggedIn={isLoggedIn}  setIsLoggedIn={setIsLoggedIn}/>}></Route>
-          <Route path="/signup" element={<Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}></Route>
-          <Route path="/about" element={<About/>}></Route>
-          <Route path="/contact" element={<Contact/>}></Route>
+          <Route path="/"  element={<Home/>}/>
+          <Route path="/login" element={<Login isLoggedIn={isLoggedIn}  setIsLoggedIn={setIsLoggedIn}/>}/>
+          <Route path="/signup" element={<Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
 
           <Route path='/dashboard' element={
             <PrivateRoute isLoggedIn={isLoggedIn}>
                <Dashboard/>
             </PrivateRoute>
-          }></Route>
+
+          }/>
           
 
         </Routes>
