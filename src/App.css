@@ -3,19 +3,22 @@
   height: 100vh;
   margin: 0rem auto;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .container{
-  width:80%;
+  width:75%;
   height: 100%;
   margin: 0 auto;
   padding-top: 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .hamburger-menu{
+  display: none;
+}
+.close-menu{
   display: none;
 }
 .navbar{
@@ -23,7 +26,7 @@
   height:6vh;
   display:flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-between;
 }
 .links{
   display: flex;
@@ -195,20 +198,41 @@
   transition: 400ms;
 }
 @media (max-width: 768px){
+  .container{
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    overflow: scroll;
+  }
   .pages{
+    width:100%;
     flex-direction:column-reverse;
-    height: max-content;
+    min-height:fit-content;
     overflow-y: scroll;
     z-index: 1;
   }
   .part2{
     width:100%;
-    height:350px;
+    height: 300px;
     box-sizing: border-box;
     padding-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .part1{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
     width: 100%;
+    min-height:max-content;
+    overflow-y: scroll;
+  }
+  .fpass{
+    position: relative;
+    top:-0.3rem;
+    left:12rem;
   }
   .links{
       display: none;
@@ -220,12 +244,36 @@
     display: block;
     font-size: 2.6rem;
     z-index: 3;
+    position: absolute;
+    left: 76%;
+    top: 2%;
+    
+  }
+  .hamburger-menu1{
+    font-size: 2.6rem;
+    z-index: 3;
+    position: inherit;
+  }
+  .close-navbar{
+    width: 3rem;
+    height: 3rem;
+  }
+  .mobile-navbar{
+    z-index: 2;
+    position: relative;
+    top: 6rem;
+    width:13rem;
+    min-height: 3rem;   
+    /* background-color: ; */
+    overflow: hidden;
+    /* position: fixed; */
+    /* height: max-content; */
+  }
+  .close-menu{
+    position: relative; 
   }
   .mobile-menu{
-    position: relative;
-    top: 5.9rem;
-    left:4rem;
-    width:15rem;
+   
     border-radius: 8px;
     height: 15rem;
     background-color: rgba(60, 58, 58, 0.845);

@@ -59,6 +59,14 @@ function Navbar(props) {
            
         </div>
         
+     
+        <div  className={menuBar?"mobile-navbar":"close-navbar"} onClick={hamburgerHandler}>
+        { menuBar? 
+          <GiSplitCross className='hamburger-menu'/>
+        :
+          <IoReorderThree className='hamburger-menu1'/>
+        }
+
         <div className={menuBar?"mobile-menu":"close-menu"}>
         { menuBar?
               <div className='links1'>
@@ -92,12 +100,6 @@ function Navbar(props) {
         }
         </div>
 
-        <div className='hamburger-menu'  onClick={hamburgerHandler}>
-        { menuBar? 
-          <GiSplitCross />
-        :
-          <IoReorderThree />
-        }
         </div>
     </div>
   )
