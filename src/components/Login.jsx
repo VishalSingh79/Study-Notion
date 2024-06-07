@@ -4,6 +4,9 @@ import frame from '../assets/frame.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
+import { FcGoogle } from "react-icons/fc";
+
+
 function Login(props) {
     let setIsLoggedIn=props.setIsLoggedIn;
     let isLoggedIn=props.isLoggedIn;
@@ -66,10 +69,11 @@ function Login(props) {
           <input type='text' placeholder='Enter Your Password' name='password' id='password' required value={signInData.password} onChange={changeFormHandler} className='input-sec1'/>
           <p className='fpass'>Forget Password</p>
           <button className='btn-submit2'>Sign In</button>
+          <div className='line'></div>
 
         </form>
-        <div>-------------------- OR ---------------------</div>
-        <button className='btn-google2'>Sign up with Google</button>
+       
+        <button className='btn-google2'><span><FcGoogle style={{fontSize:"1.5rem"}}/></span><span>Sign up with Google</span></button>
        </div>
        <div className='part2'>
          <div className='part2-img'>

@@ -62,7 +62,7 @@ function Navbar(props) {
      
         <div  className={menuBar?"mobile-navbar":"close-navbar"} onClick={hamburgerHandler}>
         { menuBar? 
-          <GiSplitCross className='hamburger-menu'/>
+          <GiSplitCross className='hamburger-menu' style={{fontSize:"2rem"}}/>
         :
           <IoReorderThree className='hamburger-menu1'/>
         }

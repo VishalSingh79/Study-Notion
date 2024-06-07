@@ -6,7 +6,7 @@ import { IoIosEye } from "react-icons/io";
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import { FcGoogle } from "react-icons/fc";
 
 function Signup(props) {
       
@@ -98,6 +98,8 @@ function Signup(props) {
           <p className='btn-formtype' onClick={accountTypeHandler} style={accountType==="Student" ? addBorder : removeBorder}>Student</p>
           <p className='btn-formtype' onClick={accountTypeHandler} style={accountType==="Instructor"?addBorder : removeBorder} >Instructor</p>
         </div>
+        <div className='Form1'>
+        
      <form onSubmit={formHandler}>
         
      <div className='name-section'>
@@ -151,10 +153,11 @@ function Signup(props) {
       
        
        <button className='btn-submit'>Sign up</button>
-
+         <div className='line'></div>
      </form>
-     <div>------------------------------- OR -------------------------------</div>
-      <button className='btn-google'>Sign up with Google</button>
+     
+      <button className='btn-google'><FcGoogle style={{fontSize:"1.5rem"}}/>Sign up with Google</button>
+      </div>
     </div>
     <div className='part2'>
         <div className='part2-img'>
